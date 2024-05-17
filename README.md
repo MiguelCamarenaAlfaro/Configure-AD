@@ -45,19 +45,19 @@ Here, I created and configured the client virtual machine. The VM is running win
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/9VIDapn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+What is shown here is that we have validated that the RDP over port 3389 is enabled, this will allow us to remote into the virtual machine. Next, we need to take special note of the Vnet, as we will need to ensure that the domain controller is set up on the same Vnet. 
 </p>
 <br />
 
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/eQqAGEm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+The next step is to create the virtual machine for the domain controller. In this step I configured the virtual machine through the Microsoft Azure portal to run Windows Server 2022. Special attention was given to the resource group and the region to ensure that they matched with the resource group and the region that were configured on the client virtual machine running Windows 10. 
 </p>
 <br />
 
