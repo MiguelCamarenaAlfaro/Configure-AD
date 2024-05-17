@@ -18,10 +18,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- I will create and configure the resources necessary to implement active directory. Primarily, I will be creating a client virtual machine running Windows 10 OS, and a domain controller VM running Windows Server 2022. 
+- I will ensure that there is a connectivity between the client and domain controller vms through the ping command line request.
+- I will install and configure active directory on the domain controller virtual machine. 
+- I will create an administrator account and an end user account in active directory and test the accounts. 
+- I will joing the client virtual machine to the domain that I created in Active directory.
+- I will set up remote desktop for non-administrative users on the client virtual machine.
+- I will deploy additional users in active directory, paying special attention to configuration and test implementation by attempting to log into the client virtual maching as one of those users. 
 
 <h2>Deployment and Configuration Steps</h2>
 
