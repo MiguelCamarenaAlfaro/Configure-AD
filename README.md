@@ -81,10 +81,10 @@ When working with a domain controller we need to validate that the IP is set to 
 
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/slfMOOJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+To test the connectivity between the client virtual machine and the domain controller virtual machine I used remote desktop to access the client virtual machine, then I opened command line and tested by pinging the static IP for the domain controller. Originally this failed, reason being that ICMPv4 was disabled in the domain controller. To resolve this, I used remote desktop to access the domain controller and I navigated to the inbound firewall rules to enable ICMPv4 on the domain controller. After completing this firewall configuration change, I retested the ping command on the client virtual machine and received a successfull ping response. 
 </p>
 <br />
 
