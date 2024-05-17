@@ -72,10 +72,10 @@ Here, I ensured that RDP over port 3389 was enabled for the domain controller an
 
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/lhOfzPq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+When working with a domain controller we need to validate that the IP is set to static. Using Microsoft Azure the IP is typically set to Dynamic be default unless there is a request for Static. To update the IP protocol in the domain controller, first we would need to review the domain controller VM in Microsoft Azure, then navigate to "Network Settings", then "IP Configurations", then click on "ipconfig", then in the "edit IP Configuration" menu we would need to select "static" under "Private IP Address" setting. Before clicking on "save" we will need to take note of the private IP address and the Public IP address shown as we will need them to continue in the future steps. 
 </p>
 <br />
 
