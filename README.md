@@ -129,15 +129,15 @@ In this next step, I selected "create a new forest" and then created a new domai
 <img src="https://i.imgur.com/t8FMEL2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this step shown, I have created a Directory Services Restore Mode (DSRM) password. Once those steps have been completed, I continued through the remainder of the steps and ensured that that domain name stayed as "thebestdomain". Once completed, the virtual machine needed to restart to complete the installation of the system. As such I relaunched the virtual machine from Microsoft Azure.
+In this step shown, I have created a Directory Services Restore Mode (DSRM) password. Once those steps have been completed, I continued through the remainder of the steps and ensured that that domain name stayed as "thebestdomain". 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/xizGuL2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Once completed, the virtual machine needed to restart to complete the installation of the system. As such I relaunched the virtual machine from Microsoft Azure. I tested the set up of the domain by loging in with "thebestdomain\ws-domaincontroller" as the username through the remote desktop. When logged in, I opened command line in the virtual machine and used the command "whoami" to again confirm that the output is "thebestdomain\ws-domaincontroller". This is shown in the screenshot. 
 </p>
 <br />
 
