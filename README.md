@@ -129,7 +129,7 @@ In this next step, I selected "create a new forest" and then created a new domai
 <img src="https://i.imgur.com/t8FMEL2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this step shown, I have created a Directory Services Restore Mode (DSRM) password. 
+In this step shown, I have created a Directory Services Restore Mode (DSRM) password. Once those steps have been completed, I continued through the remainder of the steps and ensured that that domain name stayed as "thebestdomain". Once completed, the virtual machine needed to restart to complete the installation of the system. As such I relaunched the virtual machine from Microsoft Azure.
 </p>
 <br />
 
