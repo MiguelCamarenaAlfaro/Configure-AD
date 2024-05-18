@@ -108,6 +108,32 @@ After going to through the menus, I selected and checked "Active Directory domai
 
 
 <p>
+<img src="https://i.imgur.com/2iNnk1p.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+After confirming that the installation of Microsoft Active Directory Domain services was completed, the next thing I completed was clicking on the alert in the flag icon, and clicking on the "Promote this server to a domain controller".
+</p>
+<br />
+
+
+<p>
+<img src="https://i.imgur.com/1eREoRk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+In this next step, I selected "create a new forest" and then created a new domain name. For this example, the domain that I created is "thebestdomain.com"
+</p>
+<br />
+
+
+<p>
+<img src="https://i.imgur.com/t8FMEL2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+In this step shown, I have created a Directory Services Restore Mode (DSRM) password. 
+</p>
+<br />
+
+<p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
@@ -132,3 +158,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
+
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<br />
+
