@@ -164,17 +164,76 @@ For this next step I create an organization unit. First I right-click on the dom
 <img src="https://i.imgur.com/ObKAWaB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The organizational unit is essentially just a folder that will be holding all of the user account. The organizational unit that I created is named "_Employees" 
+The organizational unit is essentially just a folder that will be holding all of the user account. The organizational unit that I created is named "_Employees". Next, I created another organizational unit and named it "_Admins". In a real-world scenario, the admin role would be assigned to an employee but this is just for illustrative purposes. 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/REzJ3wv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+In this next section, I created a user in the "_Admins" folder that I created. The way to do this is to click on the "_Admins" folder on the left-side of the screen, and then when the screen pops up fill in the requested information and then hit "Next>".
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/2eEAeU9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+In this next screen, I filled in the default password information. In the real world, this would normally be preset by the main administrator. It's important to note that in this example the password will never expire but in a real-word scenario, an admin would want to select "User must change password at next logon", to ensure that a secure password is established by the user.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/iCoBen7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+In this next step, I verified that the User "John Doe" reflected under admins, then I proceed to right-clicking on the name and selected "Properties". Under properties, I navigated to "Member of", and then selected "Add", this step enables you to add the user to a group list. I looked up and added, "domain admins", this role allows any member to make changes to the domain controller. Once I verified that Domain Admins appeared, I clicked on "Apply" to apply the change and then "OK". 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/Dcwe6Um.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+In this next step, I tested to ensure that I was able to log in with the newly created account. I used the previously created "john_doe" as the username and the password that I created in an earlier step. 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/HNBz67p.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+For further verification that I was successfully logged in to the correct account. I opened command prompt, then typed in "hostname" to verify that this was the Domain Controller Virtual Machine, and then "whoami" to verify that the output would be "thebestdomain\john_admin.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/oKqyc4G.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+The next step is to connect the Domain Controller and the Windows 10 Client Virtual machines. This would make the users able to access the domain controller from the client virtual machines. The way to do this would be to update the DNS settings in the Client VM to point to the private static IP from the Domain Controller. To find that you need to go to your Domain Controller Network Settings on Microsoft Azure. For this example, the Private IP Address of the Domain Controller is 10.0.0.5
+</p>
+<br />
+
+
+<p>
+<img src="https://i.imgur.com/6piKgfb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Next, now that I have verified the private IP address of the Domain Controller VM, I opened the Client VM in Microsoft Azure and went to "Settings", "DNS Servers", and then changed the DNS servers to "Custom", added 10.0.0.5, and then saved. This will make your client VM restart. 
+</p>
+<br />
+
+
+<p>
+<img src="https://i.imgur.com/GUgwHTv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Next I verified that the DNS server settings were updated successfully in Microsoft Azure. To do that, I remoted in to the Client VM and opened the command line. In the command line I typed in "ipconfig /all" and then scrolled down to look for DNS Servers. If correct, this should display the private IP from your domain controller. If yours does not reflect the IP address that you were expecting to see, you would need to close the RDP session, and restart the VM in Microsoft Azure and try again. 
+</p>
+<br />
+
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
