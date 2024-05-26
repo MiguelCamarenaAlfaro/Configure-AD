@@ -236,25 +236,19 @@ Next I verified that the DNS server settings were updated successfully in Micros
 
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/fTo9HFG.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+In this next step, in the client VM, I went to "System", "About", "Rename this PC(Advanced)", and in the "Computer Name" tab, I clicked on "Change", then under "Member of", I entered "Thebestdomain.com", in the following account security pop up I entered the username and the password of the admin account that I created in an earlier step for "John Doe", this will allow me to log in on the Windows Client VM with the username and the password for John Doe. 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/7bxkk8t.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Next, we will want to make sure that we update the users that are allowed to remote in to this VM. This is important because you wouldn't want to create 10,000 user accounts individually. For this on the Windows client I navigated to Settings, remote desktop, then under User accounts I clicked on "Select users that can remotely access this PC", then I clicked on "Add...", then entered "Domain Users", then OK. This allows anyone listed under the "Domain Users" organization in the Domain Controller VM to access and log in to this Windows client VM. The way that this would be useful is that a system admin can run a powershell script to batch a number of users to the domain users and automatically configure the username and password for them. Once logged in the users are able to update their passwords. This provides an organization with automation and a scalability factor that can aid in reducing time and enhancing efficiency. 
 </p>
 <br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+
