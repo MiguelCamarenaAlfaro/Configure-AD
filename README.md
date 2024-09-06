@@ -18,13 +18,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- I will create and configure the resources necessary to implement active directory. Primarily, I will be creating a client virtual machine running Windows 10 OS, and a domain controller VM running Windows Server 2022. 
-- I will ensure that there is a connectivity between the client and domain controller vms through the ping command line request.
-- I will install and configure active directory on the domain controller virtual machine. 
-- I will create an administrator account and an end user account in active directory and test the accounts. 
-- I will joing the client virtual machine to the domain that I created in Active directory.
-- I will set up remote desktop for non-administrative users on the client virtual machine.
-- I will deploy additional users in active directory, paying special attention to configuration and test implementation by attempting to log into the client virtual maching as one of those users. 
+- Create and configure the resources necessary to implement an active directory. Primarily, I will be creating a client virtual machine running Windows 10 OS, and a domain controller VM running Windows Server 2022.
+- Ensured that there was connectivity between the client and domain controller VM through the ping command line request.
+- Installed and configured the AD on the domain controller virtual machine. 
+- Created an administrator account and an end-user account in AD and tested the accounts. 
+- Linked the client VM to the domain that I created in the AD.
+- Configured remote desktop for non-administrative users on the client virtual machine.
+- Deploy additional users in AD, paying special attention to configuration and test implementation by attempting to log into the client virtual machine as one of those users. 
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -32,7 +32,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/orV8SlV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this initial step, I created a resource group in Microsoft Azure, I will be subsequently adding the client and the domain controller virtual machines to this resource group to maintain a high-level of organization.
+In this initial step, I created a resource group in Microsoft Azure, I will be subsequently adding the client and the domain controller virtual machines to this resource group to maintain a high level of organization.
 </p>
 <br />
 
@@ -40,7 +40,7 @@ In this initial step, I created a resource group in Microsoft Azure, I will be s
 <img src="https://i.imgur.com/bwv2kjE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Here, I created and configured the client virtual machine. The VM is running windows 10 22H2. It's important to ensure that in the "network tab" of the configuration process the RDP port 3389 is enabled. If disabled, using remote desktop to this virtual machine is impossible. Additionally, we ensure that the virtual machine is configured inside the resource group that we created previously.
+Here, I created and configured the client virtual machine. The VM is running windows 10 22H2. It's important to ensure that in the "network tab" of the configuration process the RDP port 3389 is enabled. If disabled, using a remote desktop to this virtual machine is impossible. Additionally, we ensure that the virtual machine is configured inside the resource group that we created previously.
 </p>
 <br />
 
@@ -164,7 +164,7 @@ For this next step I create an organization unit. First I right-click on the dom
 <img src="https://i.imgur.com/ObKAWaB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The organizational unit is essentially just a folder that will be holding all of the user account. The organizational unit that I created is named "_Employees". Next, I created another organizational unit and named it "_Admins". In a real-world scenario, the admin role would be assigned to an employee but this is just for illustrative purposes. 
+The organizational unit is essentially just a folder that will be holding all of the user accounts. The organizational unit that I created is named "_Employees". Next, I created another organizational unit and named it "_Admins". In a real-world scenario, the admin role would be assigned to an employee but this is just for illustrative purposes. 
 </p>
 <br />
 
@@ -172,7 +172,7 @@ The organizational unit is essentially just a folder that will be holding all of
 <img src="https://i.imgur.com/REzJ3wv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this next section, I created a user in the "_Admins" folder that I created. The way to do this is to click on the "_Admins" folder on the left-side of the screen, and then when the screen pops up fill in the requested information and then hit "Next>".
+In this next section, I created a user in the "_Admins" folder that I created. The way to do this is to click on the "_Admins" folder on the left side of the screen, and then when the screen pops up fill in the requested information and then hit "Next>".
 </p>
 <br />
 
@@ -188,7 +188,7 @@ In this next screen, I filled in the default password information. In the real w
 <img src="https://i.imgur.com/iCoBen7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In this next step, I verified that the User "John Doe" reflected under admins, then I proceed to right-clicking on the name and selected "Properties". Under properties, I navigated to "Member of", and then selected "Add", this step enables you to add the user to a group list. I looked up and added, "domain admins", this role allows any member to make changes to the domain controller. Once I verified that Domain Admins appeared, I clicked on "Apply" to apply the change and then "OK". 
+In this next step, I verified that the User "John Doe" reflected under admins, then I proceeded to right-click on the name and select "Properties". Under properties, I navigated to "Member of", and then selected "Add", this step enables you to add the user to a group list. I looked up and added, "domain admins", this role allows any member to make changes to the domain controller. Once I verified that Domain Admins appeared, I clicked on "Apply" to apply the change and then "OK". 
 </p>
 <br />
 
@@ -204,7 +204,7 @@ In this next step, I tested to ensure that I was able to log in with the newly c
 <img src="https://i.imgur.com/HNBz67p.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-For further verification that I was successfully logged in to the correct account. I opened command prompt, then typed in "hostname" to verify that this was the Domain Controller Virtual Machine, and then "whoami" to verify that the output would be "thebestdomain\john_admin.
+For further verification, I was successfully logged in to the correct account. I opened the command prompt, then typed in "hostname" to verify that this was the Domain Controller Virtual Machine, and then "whoami" to verify that the output would be "thebestdomain\john_admin.
 </p>
 <br />
 
@@ -212,7 +212,7 @@ For further verification that I was successfully logged in to the correct accoun
 <img src="https://i.imgur.com/oKqyc4G.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The next step is to connect the Domain Controller and the Windows 10 Client Virtual machines. This would make the users able to access the domain controller from the client virtual machines. The way to do this would be to update the DNS settings in the Client VM to point to the private static IP from the Domain Controller. To find that you need to go to your Domain Controller Network Settings on Microsoft Azure. For this example, the Private IP Address of the Domain Controller is 10.0.0.5
+The next step is to connect the Domain Controller and the Windows 10 Client Virtual machines. This would allow the users to access the domain controller from the client virtual machines. The way to do this would be to update the DNS settings in the Client VM to point to the private static IP from the Domain Controller. To find that you need to go to your Domain Controller Network Settings on Microsoft Azure. For this example, the Private IP Address of the Domain Controller is 10.0.0.5
 </p>
 <br />
 
@@ -221,7 +221,7 @@ The next step is to connect the Domain Controller and the Windows 10 Client Virt
 <img src="https://i.imgur.com/6piKgfb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next, now that I have verified the private IP address of the Domain Controller VM, I opened the Client VM in Microsoft Azure and went to "Settings", "DNS Servers", and then changed the DNS servers to "Custom", added 10.0.0.5, and then saved. This will make your client VM restart. 
+Next, now that I have verified the private IP address of the Domain Controller VM, I opened the Client VM in Microsoft Azure and went to "Settings", "DNS Servers", and then changed the DNS servers to "Custom", added 10.0.0.5, and then saved. This will make your client's VM restart. 
 </p>
 <br />
 
@@ -230,7 +230,7 @@ Next, now that I have verified the private IP address of the Domain Controller V
 <img src="https://i.imgur.com/GUgwHTv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next I verified that the DNS server settings were updated successfully in Microsoft Azure. To do that, I remoted in to the Client VM and opened the command line. In the command line I typed in "ipconfig /all" and then scrolled down to look for DNS Servers. If correct, this should display the private IP from your domain controller. If yours does not reflect the IP address that you were expecting to see, you would need to close the RDP session, and restart the VM in Microsoft Azure and try again. 
+Next, I verified that the DNS server settings were updated successfully in Microsoft Azure. To do that, I remoted into the Client VM and opened the command line. In the command line, I typed in "ipconfig /all" and then scrolled down to look for DNS Servers. If correct, this should display the private IP from your domain controller. If yours does not reflect the IP address that you were expecting to see, you would need to close the RDP session, restart the VM in Microsoft Azure, and try again. 
 </p>
 <br />
 
@@ -247,7 +247,7 @@ In this next step, in the client VM, I went to "System", "About", "Rename this P
 <img src="https://i.imgur.com/7bxkk8t.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next, we will want to make sure that we update the users that are allowed to remote in to this VM. This is important because you wouldn't want to create 10,000 user accounts individually. For this on the Windows client I navigated to Settings, remote desktop, then under User accounts I clicked on "Select users that can remotely access this PC", then I clicked on "Add...", then entered "Domain Users", then OK. This allows anyone listed under the "Domain Users" organization in the Domain Controller VM to access and log in to this Windows client VM. The way that this would be useful is that a system admin can run a powershell script to batch a number of users to the domain users and automatically configure the username and password for them. Once logged in the users are able to update their passwords. This provides an organization with automation and a scalability factor that can aid in reducing time and enhancing efficiency. 
+Next, we will want to make sure that we update the users that are allowed to remote into this VM. This is important because you wouldn't want to create 10,000 user accounts individually. For this on the Windows client I navigated to Settings, remote desktop, then under User accounts I clicked on "Select users that can remotely access this PC", then I clicked on "Add...", then entered "Domain Users", then OK. This allows anyone listed under the "Domain Users" organization in the Domain Controller VM to access and log in to this Windows client VM. The way that this would be useful is that a system admin can run a Powershell script to batch several users to the domain users and automatically configure the username and password for them. Once logged in the users can update their passwords. This provides an organization with automation and a scalability factor that can aid in reducing time and enhancing efficiency. 
 </p>
 <br />
 
